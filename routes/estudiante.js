@@ -13,6 +13,7 @@ router.get('/buscar/:id',PersonaController.get_estudiantebyid);
 router.delete('/eliminarestudiante/:cosa',PersonaController.delete);
 router.get('/buscarestudiantes/:parametro',PersonaController.search);
 router.get('/obtenerimagen/:nombreimagen',PersonaController.obtener_imagen);
+router.get('/imagen/:imagen',PersonaController.obtener_imagen);
 router.post('/subir-imagenestudiante/:id',md_upload,PersonaController.upload);
 module.exports=router;
 /*

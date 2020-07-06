@@ -247,7 +247,7 @@ var controller={
             })
         }
     },
-    obtener_imagen:(req,res)=>{
+   /* obtener_imagen:(req,res)=>{
         var file=req.params.nombreimagen;
         var file_path='./upload/estudiante/'+file;
         fs.exists(file_path,(exist)=>{
@@ -261,6 +261,24 @@ var controller={
                 })  
             }
         })
+    },*/
+    
+     obtener_imagen:(req,res)=>{
+        var file=req.params.imagen;
+        var file_path='./upload/estudiante/'+file;
+        console.log(file_path)
+        fs.exists(file_path,(exist)=>{
+            if(exist){
+                return res.sendFile(path.resolve(file_path));
+            }
+            else{
+                return res.status(404).send({
+                    status:'error',
+                    message:'La imagen no existe',
+                })
+            }
+        })
     }
+    
 };
 module.exports=controller;
