@@ -16,7 +16,9 @@ var controller={
             var validar_precio=!validator1.isEmpty(params.precio);
         }
         catch(err){
+            console.log("Error al enviar");
             return res.status(200).send({
+                
                 status:'error',
                 message:'No se enviaron todos los datos',
             })
@@ -37,6 +39,7 @@ var controller={
             }
         })
         if(validar_nombre && validar_proovedor && validar_precio){
+            
             return res.status(200).send({
                 status:'Exitoso',
                 producto,
